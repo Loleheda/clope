@@ -24,7 +24,7 @@ public class MushroomDB implements DB {
                 List<String> items = new ArrayList<>(List.of(myReader.nextLine().split(",")));
                 String group = items.get(0);
                 items = items.subList(1, items.size());
-                // Так как одинаковые буквы на разных позициях в транзакции имеют разное значение, поэтому приписываем к объекту его позицию
+                // Так как в транзакции одинаковые буквы на разных позициях имеют разное значение, поэтому приписываем к объекту его позицию
                 for (int i = 0; i < items.size(); i++) {
                     if (items.get(i).equals("?")) continue;
                     items.set(i, items.get(i)+i);
